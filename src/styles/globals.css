@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;700;900&family=Sora:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+:root {
+  --color-bg: #060306;
+  --color-surface: #140606;
+  --color-surface-variant: #220b0b;
+  --color-primary: #6C0E0E;
+  --color-primary-glow: rgba(108, 14, 14, 0.45);
+  --color-secondary: #EBD5AA;
+  --color-secondary-glow: rgba(235, 213, 170, 0.45);
+  --color-accent: #6C0E0E;
+  --font-sans: 'Sora', 'Manrope', sans-serif;
+  --font-serif: 'Bricolage Grotesque', serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #060306;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(235, 213, 170, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+
+/* Solid Non-Gradient Typography */
+.text-gradient {
+  color: var(--color-secondary);
+}
+
+.text-gradient-rev {
+  color: var(--color-secondary);
+}
+
+.glow-primary {
+  box-shadow: 0 0 25px var(--color-primary-glow);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 25px var(--color-secondary-glow);
+}
+
+.border-glow {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 15px var(--color-primary-glow);
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+/* 3D Broadcast & Arena Studio Animations */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Hardware Accelerated Continuous Smooth Flowing Ribbons */
+@keyframes continuousMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes continuousMarqueeReverse {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-tape-flow {
+  display: flex !important;
+  width: max-content !important;
+  animation: continuousMarquee 32s linear infinite !important;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+
+.animate-tape-flow-reverse {
+  display: flex !important;
+  width: max-content !important;
+  animation: continuousMarqueeReverse 38s linear infinite !important;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+
+.animate-tape-flow-slow {
+  display: flex !important;
+  width: max-content !important;
+  animation: continuousMarqueeReverse 45s linear infinite !important;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+
+@keyframes logoStinger3D {
+  0% {
+    transform: perspective(1000px) rotateY(-180deg) scale(0.7);
+    opacity: 0;
+  }
+  50% {
+    transform: perspective(1000px) rotateY(0deg) scale(1.1);
+    opacity: 1;
+  }
+  85% {
+    transform: perspective(1000px) rotateY(10deg) scale(1.03);
+    opacity: 1;
+  }
+  100% {
+    transform: perspective(1000px) rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-stinger-3d {
+  animation: logoStinger3D 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes sweepRay {
+  0% {
+    transform: translate3d(-150%, 0, 0) skewX(-25deg);
+  }
+  100% {
+    transform: translate3d(250%, 0, 0) skewX(-25deg);
+  }
+}
+
+.animate-sweep-ray {
+  animation: sweepRay 3s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes pulseGoldGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(245, 158, 11, 0.8);
+  }
+}
+
+.animate-gold-glow {
+  animation: pulseGoldGlow 2s ease-in-out infinite;
+}
+
+@keyframes card3DFlipIn {
+  0% {
+    transform: perspective(1200px) rotateX(45deg) translate3d(0, 40px, 0) scale(0.92);
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(1200px) rotateX(0deg) translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-card-3d-in {
+  animation: card3DFlipIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+

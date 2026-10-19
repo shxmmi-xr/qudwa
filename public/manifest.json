@@ -1,0 +1,67 @@
+{
+  "name": "QUDWA - KUIA Arts Fest 2026",
+  "short_name": "QUDWA",
+  "description": "Official Mobile Web App for QUDWA KUIA Arts Fest 2026. Live results, stage updates, team standings, and downloads.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060306",
+  "theme_color": "#060306",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["events", "education", "entertainment"],
+  "shortcuts": [
+    {
+      "name": "Live Results",
+      "short_name": "Results",
+      "description": "Check live results and podium winners",
+      "url": "/results",
+      "icons": [{ "src": "/icons/icon.svg", "sizes": "96x96" }]
+    },
+    {
+      "name": "Team Standings",
+      "short_name": "Standings",
+      "description": "View overall team point leaderboard",
+      "url": "/standings",
+      "icons": [{ "src": "/icons/icon.svg", "sizes": "96x96" }]
+    },
+    {
+      "name": "Updates",
+      "short_name": "Updates",
+      "description": "Official circulars and notifications",
+      "url": "/bulletin",
+      "icons": [{ "src": "/icons/icon.svg", "sizes": "96x96" }]
+    },
+    {
+      "name": "Downloads",
+      "short_name": "Downloads",
+      "description": "Download festival by-laws and schedules",
+      "url": "/downloads",
+      "icons": [{ "src": "/icons/icon.svg", "sizes": "96x96" }]
+    }
+  ]
+}
